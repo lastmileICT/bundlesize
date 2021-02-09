@@ -16,7 +16,7 @@ const setBuildStatus = ({
 }) => {
   if (fail) build.fail(globalMessage || 'bundle size > maxSize', url)
   else {
-    if (currentEvent === 'push' && currentBranch === 'master') {
+    if (currentEvent === 'push' && currentBranch === 'main') {
       const values = []
       files.map(file => values.push({ path: file.path, size: file.size }))
       api.set(values)
